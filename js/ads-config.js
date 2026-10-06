@@ -5,8 +5,8 @@
  */
 
 const ADS_CONFIG = {
-  client: "ca-pub-XXXXXXXXXXXXXXXX",
-  enabled: false,
+  client: "ca-pub-7959072629123030",
+  enabled: true,
   slots: {
     header: "0000000001",
     inArticle: "0000000002",
