@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadoras de Salud y Nutrición - NutriVital</title>
+  <meta name="description" content="Calculadoras gratuitas de salud: calcula tu IMC (Índice de Masa Corporal), requerimientos diarios de agua y calorías totales de mantenimiento.">
+  <link rel="canonical" href="https://nutrivital-salud.com/herramientas/">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">🥗</div>
+        Nutri<span>Vital</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="index.html" class="active">Calculadoras</a></li>
+          <li><a href="../articulos/guia-macronutrientes-proteinas-grasas-carbohidratos.html">Macronutrientes</a></li>
+          <li><a href="../articulos/como-calcular-deficit-calorico-saludable.html">Déficit</a></li>
+          <li><a href="../articulos/beneficios-ayuno-intermitente-ciencia.html">Ayuno</a></li>
+          <li><a href="../sobre-nosotros.html">Nosotros</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box header-banner" data-ad-slot="header"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="breadcrumbs" style="margin-top: 20px;">
+      <a href="../index.html">Inicio</a> &gt; <span>Calculadoras de Salud</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="main-layout single-column">
+      
+      <div style="text-align: center; margin-bottom: 35px;">
+        <span class="badge">Herramientas Clínicas Gratuitas</span>
+        <h1 style="font-size: 2.2rem; color: #134e4a;">Calculadoras Nutricionales y de Composición Corporal</h1>
+        <p style="color: #64748b;">Parámetros antropométricos calculados según estándares de la OMS.</p>
+      </div>
+
+      <!-- Calculadora IMC -->
+      <section id="calculadora-imc" class="calculator-box">
+        <h2 class="calculator-title">1. Calculadora de Índice de Masa Corporal (IMC)</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">Evalúa tu relación peso-estatura y determina si te encuentras en un rango saludable de acuerdo con los criterios de la Organización Mundial de la Salud.</p>
+
+        <form id="bmi-calc-form" onsubmit="event.preventDefault();">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div class="form-group">
+              <label for="bmi-weight">Peso Corporal Actual (kg):</label>
+              <input type="number" id="bmi-weight" class="input-control" value="70" min="30" max="250" step="0.5">
+            </div>
+            <div class="form-group">
+              <label for="bmi-height">Estatura (cm):</label>
+              <input type="number" id="bmi-height" class="input-control" value="175" min="100" max="230">
+            </div>
+          </div>
+
+          <div class="results-panel">
+            <h4 style="color: #0f766e; margin-bottom: 12px;">Resultado del Diagnóstico:</h4>
+            <div class="result-item">
+              <span style="font-weight: 600;">Índice de Masa Corporal (IMC):</span>
+              <span id="bmi-result-value" class="result-value">22.9</span>
+            </div>
+            <div class="result-item" style="border-top: 2px solid #0d9488; padding-top: 12px;">
+              <span style="font-weight: 600;">Clasificación OMS:</span>
+              <span id="bmi-result-category" style="font-size: 1.15rem; font-weight: 800;">Peso Normal (Saludable)</span>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Bloque AdSense Intermedio -->
+      <div class="ad-slot-wrapper">
+        <span class="ad-label">Publicidad</span>
+        <div class="ad-box in-article-banner" data-ad-slot="inArticle"></div>
+      </div>
+
+      <!-- Calculadora de Agua -->
+      <section id="calculadora-agua" class="calculator-box">
+        <h2 class="calculator-title">2. Calculadora de Requerimiento Diario de Agua</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">Calcula la cantidad óptima de agua que debes beber según tu masa corporal y la intensidad de tu ejercicio diario.</p>
+
+        <form id="water-calc-form" onsubmit="event.preventDefault();">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div class="form-group">
+              <label for="water-weight">Tu Peso (kg):</label>
+              <input type="number" id="water-weight" class="input-control" value="68" min="30" max="200">
+            </div>
+            <div class="form-group">
+              <label for="water-activity">Minutos de Ejercicio al Día:</label>
+              <select id="water-activity" class="input-control">
+                <option value="0">0 minutos (Día de reposo)</option>
+                <option value="30" selected>30 minutos (Moderado)</option>
+                <option value="60">60 minutos (Intenso)</option>
+                <option value="90">90+ minutos (Muy intenso / Calor)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="results-panel" style="background: #eff6ff; border-color: #bfdbfe;">
+            <h4 style="color: #1e40af; margin-bottom: 12px;">Tu Ingesta Diaria Sugerida:</h4>
+            <div class="result-item" style="border-color: #bfdbfe;">
+              <span style="color: #1e3a8a; font-weight: 600;">Volumen Total Recomendado:</span>
+              <span id="res-water-liters" class="result-value" style="color: #2563eb;">2.73 Litros / día</span>
+            </div>
+            <div class="result-item" style="border-color: #bfdbfe;">
+              <span style="color: #1e3a8a; font-weight: 600;">Equivalencia en Vasos:</span>
+              <span id="res-water-glasses" style="font-weight: 700; color: #1e40af;">Aprox. 11 vasos de 250 ml</span>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Nueva Herramienta 3: Calculadora de Proteína Óptima -->
+      <section id="calculadora-proteina" class="calculator-box">
+        <span class="badge">Nutrición Deportiva</span>
+        <h2 class="calculator-title">3. Calculadora de Requerimiento Proteico Diario</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">Averigua cuántos gramos exactos de proteína necesitas al día según tu objetivo corporal (pérdida de grasa, salud general o hipertrofia muscular).</p>
+
+        <form id="protein-calc-form" onsubmit="event.preventDefault();">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div class="form-group">
+              <label for="protein-weight">Tu Peso Actual (kg):</label>
+              <input type="number" id="protein-weight" class="input-control" value="70" min="30" max="220">
+            </div>
+            <div class="form-group">
+              <label for="protein-goal">Tu Objetivo Principal:</label>
+              <select id="protein-goal" class="input-control">
+                <option value="1.0">Salud General / Sedentario (1.0 g / kg)</option>
+                <option value="1.6">Mantenimiento y Deporte Moderado (1.6 g / kg)</option>
+                <option value="2.0" selected>Ganancia Muscular / Hipertrofia (2.0 g / kg)</option>
+                <option value="2.3">Déficit Agresivo / Definición (2.3 g / kg)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="results-panel" style="background: #f0fdf4; border-color: #86efac;">
+            <h4 style="color: #166534; margin-bottom: 12px;">Tu Meta Proteica Diaria:</h4>
+            <div class="result-item" style="border-color: #86efac;">
+              <span style="color: #166534; font-weight: 600;">Gramos Diarios Recomendados:</span>
+              <span id="res-protein-grams" class="result-value" style="color: #059669;">140 gramos / día</span>
+            </div>
+            <div class="result-item" style="border-color: #86efac;">
+              <span style="color: #166534; font-weight: 600;">Calorías Totales de Proteína:</span>
+              <span id="res-protein-kcal" style="font-weight: 700; color: #15803d;">560 kcal procedentes de proteína</span>
+            </div>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box footer-banner" data-ad-slot="footer"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 NutriVital. Todos los derechos reservados.</p>
+      <div>
+        <a href="../politica-de-privacidad.html" style="color: #94a3b8; margin-right: 15px;">Privacidad</a>
+        <a href="../terminos-y-condiciones.html" style="color: #94a3b8;">Aviso Médico</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/ads-config.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

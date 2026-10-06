@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto y Sugerencias - NutriVital</title>
+  <meta name="description" content="Ponte en contacto con el equipo de NutriVital. Dudas, correcciones sobre artículos y propuestas de divulgación.">
+  <link rel="canonical" href="https://nutrivital-salud.com/contacto.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🥗</div>
+        Nutri<span>Vital</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="herramientas/index.html">Calculadoras</a></li>
+          <li><a href="articulos/guia-macronutrientes-proteinas-grasas-carbohidratos.html">Macronutrientes</a></li>
+          <li><a href="articulos/como-calcular-deficit-calorico-saludable.html">Déficit</a></li>
+          <li><a href="articulos/beneficios-ayuno-intermitente-ciencia.html">Ayuno</a></li>
+          <li><a href="sobre-nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 30px;">
+    <div class="main-layout single-column">
+      <div class="legal-content">
+        <span class="badge">Atención y Comunicación</span>
+        <h1>Canal Oficial de Contacto</h1>
+        <p style="color: #64748b; margin-bottom: 25px;">
+          ¿Tienes una sugerencia técnica sobre nuestras calculadoras, has detectado una errata o deseas aportar un nuevo estudio científico? Escríbenos directamente y nuestro equipo editorial te responderá en un plazo máximo de 48 horas hábiles.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 35px;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px;">
+            <h3 style="color: #134e4a; margin-bottom: 12px; font-size: 1.15rem;">📬 Correo Electrónico Editorial</h3>
+            <p style="font-size: 0.95rem; color: #475569; margin-bottom: 8px;">Para dudas generales y prensa:</p>
+            <p style="font-weight: 700; color: #0d9488; font-size: 1.05rem;">info@nutrivital-salud.com</p>
+            <p style="font-size: 0.95rem; color: #475569; margin: 16px 0 8px;">Para sugerencias o correcciones:</p>
+            <p style="font-weight: 700; color: #0d9488; font-size: 1.05rem;">editorial@nutrivital-salud.com</p>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px;">
+            <h3 style="color: #134e4a; margin-bottom: 12px; font-size: 1.15rem;">⏰ Horario de Respuesta</h3>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">
+              Lunes a Viernes: 09:00 - 18:00 (CET)<br>
+              Tiempo de respuesta habitual: Menos de 24 horas.<br>
+              <em>Nota: No se responden consultas clínicas particulares ni prescripciones médicas personalizadas.</em>
+            </p>
+          </div>
+        </div>
+
+        <h2 style="margin-bottom: 20px;">Formulario de Mensaje Directo</h2>
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 26px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 18px;">
+            <div class="form-group">
+              <label for="contact-name" style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Nombre Completo:</label>
+              <input type="text" id="contact-name" class="input-control" placeholder="Ej. Carlos Martínez" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email" style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Correo Electrónico:</label>
+              <input type="email" id="contact-email" class="input-control" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 18px;">
+            <label for="contact-subject" style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Asunto del Mensaje:</label>
+            <select id="contact-subject" class="input-control">
+              <option value="sugerencia">Sugerencia sobre las Calculadoras</option>
+              <option value="errata">Corrección o fuente en un artículo</option>
+              <option value="legal">Privacidad y Protección de Datos</option>
+              <option value="publicidad">Pregunta sobre Publicidad o Prensa</option>
+              <option value="otro">Otro asunto</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label for="contact-msg" style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem;">Tu Mensaje:</label>
+            <textarea id="contact-msg" class="input-control" rows="5" placeholder="Escribe tu mensaje con el mayor detalle posible..." required style="resize: vertical;"></textarea>
+          </div>
+
+          <div style="margin-bottom: 20px; font-size: 0.85rem; color: #64748b;">
+            <label style="display: flex; gap: 8px; align-items: flex-start; cursor: pointer;">
+              <input type="checkbox" required style="margin-top: 3px;">
+              <span>He leído y acepto la <a href="politica-de-privacidad.html" target="_blank" style="text-decoration: underline;">Política de Privacidad</a> y consiento el tratamiento de mis datos de contacto para responder a mi solicitud.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="padding: 12px 28px;">Enviar Mensaje</button>
+          
+          <div id="contact-success" style="display: none; margin-top: 20px; padding: 14px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; border-radius: 8px;">
+            ✅ <strong>¡Mensaje enviado con éxito!</strong> Nos pondremos en contacto contigo a la mayor brevedad.
+          </div>
+        </form>
+
+        <script>
+        function handleContactSubmit(e) {
+          e.preventDefault();
+          const successBox = document.getElementById('contact-success');
+          successBox.style.display = 'block';
+          document.getElementById('contact-form').reset();
+        }
+        </script>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🥗 NutriVital</h3>
+          <p>Portal divulgativo de nutrición humana, hábitos metabólicos saludables y bienestar integral.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Herramientas</h4>
+          <ul>
+            <li><a href="index.html#calculadora-tdee">Gasto Calórico TDEE</a></li>
+            <li><a href="herramientas/index.html#calculadora-imc">Índice de Masa Corporal</a></li>
+            <li><a href="herramientas/index.html#calculadora-agua">Consumo de Agua</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="politica-de-privacidad.html">Privacidad</a></li>
+            <li><a href="terminos-y-condiciones.html">Términos y Aviso Médico</a></li>
+            <li><a href="politica-de-cookies.html">Cookies</a></li>
+            <li><a href="sobre-nosotros.html">Quiénes Somos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p style="color: #ffffff; font-weight: 600;">info@nutrivital-salud.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NutriVital. Todos los derechos reservados.</p>
+        <p>Monetización responsable compatible con Google AdSense.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

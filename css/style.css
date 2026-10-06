@@ -1,0 +1,1100 @@
+/* ==========================================================================
+   NutriVital - Nutrición Basada en Evidencia, Metabolismo & Bienestar
+   DISEÑO EXCLUSIVO: Nordic Wellness & Modern BioTech Laboratory (Glass & Pill)
+   ========================================================================== */
+
+:root {
+  /* Paleta Nordic Wellness & BioTech */
+  --primary: #0d9488;          /* Eucalyptus Mint */
+  --primary-hover: #0f766e;
+  --primary-glow: #14b8a6;
+  --primary-light: #ccfbf1;
+  --primary-soft: #f0fdfa;
+  --primary-border: #99f6e4;
+  
+  --secondary: #134e4a;        /* Deep Eucalyptus Slate */
+  --secondary-soft: #2d6a66;
+  
+  --accent: #f97316;           /* Soft Coral / Tangerine */
+  --accent-hover: #ea580c;
+  --accent-light: #ffedd5;
+  --accent-soft: #fff7ed;
+  --accent-border: #fed7aa;
+  
+  --sage: #10b981;             /* Sage Bio-Green */
+  --sage-light: #d1fae5;
+  
+  --text-main: #1e293b;        /* Soft Slate */
+  --text-muted: #64748b;
+  --text-heading: #0f403c;
+  
+  --bg-main: #f8fafc;          /* Pure Ice Eggshell */
+  --bg-card: #ffffff;          /* Glass White */
+  --bg-surface: #f0fdfa;       /* Mint Bath Surface */
+  
+  --border: #e2e8f0;
+  --border-mint: rgba(13, 148, 136, 0.22);
+  --border-focus: #14b8a6;
+  
+  --ad-bg: #f8fafc;
+  --ad-border: #cbd5e1;
+  
+  --shadow-sm: 0 2px 8px rgba(13, 148, 136, 0.05);
+  --shadow-md: 0 10px 28px -4px rgba(13, 148, 136, 0.09), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 20px 40px -6px rgba(13, 148, 136, 0.14), 0 8px 16px -4px rgba(249, 115, 22, 0.06);
+  
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 9999px;
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Consolas, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(circle at 8% 12%, rgba(204, 251, 241, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 92% 78%, rgba(254, 215, 170, 0.3) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(209, 250, 229, 0.2) 0%, transparent 60%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.72;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .calculator-title, .article-title, .section-header h2 {
+  color: var(--text-heading);
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   Header: Floating Glassmorphic Pill Navbar
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 14px;
+  z-index: 100;
+  margin: 12px auto;
+  max-width: 1180px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-mint);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px -4px rgba(13, 148, 136, 0.08);
+  padding: 0 16px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #0d9488 0%, #10b981 100%);
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.2);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.94rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-hover);
+  background: var(--primary-light);
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  box-shadow: 0 3px 8px rgba(13, 148, 136, 0.25);
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Contenedores AdSense
+   ========================================================================== */
+.ad-slot-wrapper {
+  margin: 26px auto;
+  text-align: center;
+  max-width: 100%;
+  clear: both;
+}
+
+.ad-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.ad-box {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px dashed var(--primary-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin: 0 auto;
+  min-height: 90px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.ad-box.header-banner { max-width: 728px; min-height: 90px; }
+.ad-box.sidebar-banner { max-width: 300px; min-height: 250px; }
+.ad-box.in-article-banner { max-width: 100%; min-height: 120px; }
+.ad-box.footer-banner { max-width: 970px; min-height: 90px; }
+
+.ad-placeholder-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Hero Section: Nordic Organic Atmosphere
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, rgba(204, 251, 241, 0.7) 0%, rgba(224, 242, 254, 0.5) 50%, rgba(255, 247, 237, 0.7) 100%);
+  border-bottom: 1px solid var(--primary-border);
+  border-radius: var(--radius-lg);
+  margin-top: 10px;
+  padding: 58px 24px 48px;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: #ffffff;
+  color: var(--primary-hover);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.badge::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.22;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 740px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(13, 148, 136, 0.38);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--secondary);
+  border: 1px solid var(--primary-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-soft);
+  color: var(--primary-hover);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Layout Principal & Bento Grid Cards
+   ========================================================================== */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  margin: 40px 0;
+}
+
+.main-layout.single-column {
+  grid-template-columns: 1fr;
+  max-width: 860px;
+  margin: 40px auto;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 1.95rem;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-top: 4px;
+}
+
+/* Tarjetas Estilo Bento-Grid con Esquinas Suaves */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 26px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d9488, #f97316);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-tag {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0f766e;
+  background: var(--primary-light);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.card h3 a {
+  color: var(--secondary);
+}
+
+.card h3 a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+/* ==========================================================================
+   Calculadora BioTech & Laboratorio Metabólico
+   ========================================================================== */
+.calculator-box {
+  background: #ffffff;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 38px;
+  position: relative;
+}
+
+.calculator-title {
+  font-size: 1.65rem;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+
+.input-control {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-main);
+  outline: none;
+  font-family: var(--font-sans);
+  transition: all 0.2s ease;
+}
+
+.input-control:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
+}
+
+.results-panel {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  margin-top: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.results-panel h4 {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--primary-border);
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-label {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.result-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Sidebar Widgets
+   ========================================================================== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.widget {
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.16);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.widget-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--secondary);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.widget-list {
+  list-style: none;
+}
+
+.widget-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.widget-list li:last-child {
+  border-bottom: none;
+}
+
+.widget-list a {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.94rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.widget-list a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Contenido de Artículos y Aviso Médico Riguroso
+   ========================================================================== */
+.medical-disclaimer {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 18px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: #92400e;
+  margin: 28px 0;
+  line-height: 1.65;
+}
+
+.article-header {
+  margin-bottom: 32px;
+}
+
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.article-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.author-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.author-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.table-of-contents {
+  background: var(--primary-soft);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-md);
+  padding: 22px 28px;
+  margin: 28px 0;
+}
+
+.toc-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.table-of-contents ul {
+  padding-left: 20px;
+}
+
+.table-of-contents li {
+  margin-bottom: 8px;
+}
+
+.article-body {
+  font-size: 1.06rem;
+  line-height: 1.85;
+  color: #334155;
+}
+
+.article-body h2 {
+  font-size: 1.8rem;
+  color: var(--secondary);
+  margin: 38px 0 16px;
+  padding-top: 10px;
+}
+
+.article-body h3 {
+  font-size: 1.35rem;
+  color: var(--secondary);
+  margin: 26px 0 12px;
+}
+
+.article-body p {
+  margin-bottom: 22px;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0 0 24px 26px;
+}
+
+.article-body li {
+  margin-bottom: 8px;
+}
+
+.callout {
+  background: var(--primary-soft);
+  border: 1px solid var(--primary-border);
+  border-left: 4px solid var(--primary);
+  padding: 18px 24px;
+  border-radius: var(--radius-sm);
+  margin: 28px 0;
+}
+
+.callout-title {
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   Tablas Clínicas y de Composición
+   ========================================================================== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 30px 0;
+  background: #ffffff;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+th {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 700;
+}
+
+td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f0fdfa;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f0fdfa;
+}
+
+/* ==========================================================================
+   Acordeón de Preguntas Frecuentes
+   ========================================================================== */
+.faq-accordion {
+  margin: 28px 0;
+}
+
+.faq-item {
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 18px 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.faq-question:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: transform 0.2s;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 22px 20px;
+  color: #334155;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ==========================================================================
+   Newsletter & Boletín de Salud
+   ========================================================================== */
+.newsletter-box {
+  background: linear-gradient(135deg, #134e4a 0%, #0d9488 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin: 45px 0;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.newsletter-box h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.newsletter-box p {
+  font-size: 1.05rem;
+  color: var(--primary-light);
+  max-width: 620px;
+  margin: 0 auto 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  min-width: 250px;
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter-form button {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter-form button:hover {
+  background: var(--accent-hover);
+}
+
+/* ==========================================================================
+   Páginas Legales
+   ========================================================================== */
+.legal-content {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-content h1 {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.legal-content h2 {
+  font-size: 1.45rem;
+  color: var(--secondary);
+  margin: 28px 0 14px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background: #0d3d38;
+  color: #cbd5e1;
+  padding: 65px 0 32px;
+  margin-top: 65px;
+  border-top: 4px solid var(--primary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.footer-brand p {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #a7f3d0;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
+}
+
+.footer-col a {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   Banner de Cookies
+   ========================================================================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0d3d38;
+  color: #ffffff;
+  padding: 22px;
+  z-index: 9999;
+  border-top: 2px solid var(--primary);
+  display: none;
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.cookie-text a {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Barra de Progreso de Lectura
+   ========================================================================== */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #14b8a6, #f97316);
+  width: 0%;
+  z-index: 99999;
+  transition: width 0.1s ease;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 992px) {
+  .site-header {
+    border-radius: 0;
+    margin: 0;
+    top: 0;
+  }
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .article-title {
+    font-size: 2rem;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  .main-nav.active {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

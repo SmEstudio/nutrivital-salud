@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriVital - Nutrición Basada en Evidencia, Salud y Calculadoras</title>
+  <meta name="description" content="Portal de salud, nutrición clínica y fitness basado en ciencia. Calcula tu gasto energético diario (TDEE), tu IMC y aprende a estructurar tus macronutrientes.">
+  <meta name="keywords" content="tdee calculadora, deficit calorico, macronutrientes, imc calculadora, ayuno intermitente, nutricion saludable">
+  <link rel="canonical" href="https://nutrivital-salud.com/">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NutriVital - Salud y Nutrición Basada en Evidencia">
+  <meta property="og:description" content="Calcula tus calorías diarias, conoce tu composición corporal y adopta hábitos saludables sostenibles.">
+  <meta property="og:url" content="https://nutrivital-salud.com/">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='30' fill='%230d9488'/><text y='70' x='50' text-anchor='middle' font-size='60'>🥗</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NutriVital",
+    "url": "https://nutrivital-salud.com/",
+    "description": "Portal de divulgación en nutrición, metabolismo y herramientas interactivas de salud."
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🥗</div>
+        Nutri<span>Vital</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="herramientas/index.html">Calculadoras</a></li>
+          <li><a href="articulos/guia-macronutrientes-proteinas-grasas-carbohidratos.html">Macronutrientes</a></li>
+          <li><a href="articulos/como-calcular-deficit-calorico-saludable.html">Déficit Calórico</a></li>
+          <li><a href="articulos/beneficios-ayuno-intermitente-ciencia.html">Ayuno</a></li>
+          <li><a href="sobre-nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Superior AdSense -->
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box header-banner" data-ad-slot="header"></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Ciencia y Bienestar</span>
+      <h1>Nutrición Inteligente y Hábitos Basados en Evidencia Científica</h1>
+      <p>Aprende a nutrir tu cuerpo sin dietas milagro ni restricciones extremas. Herramientas metabólicas gratuitas y artículos redactados por especialistas.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#calculadora-tdee" class="btn btn-primary">Calcular Mis Calorías Diarias</a>
+        <a href="herramientas/index.html" class="btn btn-secondary">Ver Todas las Calculadoras</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Hábitos Saludables NutriVital -->
+  <div style="background: #ffffff; border-bottom: 1px solid #ccfbf1; padding: 12px 0; font-size: 0.88rem; box-shadow: 0 2px 6px rgba(13,148,136,0.04);">
+    <div class="container" style="display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+      <span style="display: inline-flex; align-items: center; gap: 6px; background: #f0fdfa; padding: 5px 14px; border-radius: 9999px; color: #0f766e; font-weight: 600; border: 1px solid #99f6e4;">🥑 <strong>Grasas Saludables:</strong> 25-35% TDEE</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; background: #fff7ed; padding: 5px 14px; border-radius: 9999px; color: #c2410c; font-weight: 600; border: 1px solid #fed7aa;">🍗 <strong>Proteína Óptima:</strong> 1.6 - 2.2 g/kg</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; background: #ecfdf5; padding: 5px 14px; border-radius: 9999px; color: #065f46; font-weight: 600; border: 1px solid #a7f3d0;">💧 <strong>Hidratación:</strong> 35 ml/kg peso</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; padding: 5px 14px; border-radius: 9999px; color: #1d4ed8; font-weight: 600; border: 1px solid #bfdbfe;">😴 <strong>Sueño Reparador:</strong> 7-9 Horas</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="main-layout">
+      
+      <div class="content-area">
+        
+        <!-- Calculadora TDEE y TMB Destacada -->
+        <section id="calculadora-tdee" class="calculator-box">
+          <span class="badge">Herramienta Metabólica</span>
+          <h2 class="calculator-title">Calculadora de Gasto Calórico Total Diario (TDEE)</h2>
+          <p style="color: #64748b; margin-bottom: 20px; font-size: 0.95rem;">
+            Calcula tu Tasa Metabólica Basal (TMB) y tus calorías reales de mantenimiento según la ecuación clínica de Mifflin-St Jeor.
+          </p>
+
+          <form id="tdee-calc-form" onsubmit="event.preventDefault();">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+              <div class="form-group">
+                <label for="calc-gender">Sexo Biológico:</label>
+                <select id="calc-gender" class="input-control">
+                  <option value="female">Mujer</option>
+                  <option value="male" selected>Hombre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="calc-age">Edad (Años):</label>
+                <input type="number" id="calc-age" class="input-control" value="28" min="15" max="100">
+              </div>
+
+              <div class="form-group">
+                <label for="calc-weight">Peso Corporal (kg):</label>
+                <input type="number" id="calc-weight" class="input-control" value="75" min="30" max="250" step="0.5">
+              </div>
+
+              <div class="form-group">
+                <label for="calc-height">Altura (cm):</label>
+                <input type="number" id="calc-height" class="input-control" value="178" min="100" max="230">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="calc-activity">Nivel de Actividad Física Semanal:</label>
+              <select id="calc-activity" class="input-control">
+                <option value="1.2">Sedentario (Trabajo de escritorio, poco o nada de ejercicio)</option>
+                <option value="1.375" selected>Ligero (Ejercicio 1 a 3 días por semana)</option>
+                <option value="1.55">Moderado (Ejercicio moderado 3 a 5 días por semana)</option>
+                <option value="1.725">Muy Activo (Entrenamiento intenso 6 a 7 días por semana)</option>
+              </select>
+            </div>
+
+            <div class="results-panel">
+              <h4 style="color: #0f766e; margin-bottom: 14px; font-size: 1.15rem;">Tus Necesidades Calóricas Estimadas:</h4>
+              <div class="result-item">
+                <span>Metabolismo Basal (TMB en reposo absoluto):</span>
+                <span id="res-bmr" style="color: #64748b; font-weight: 700;">1.723 kcal / día</span>
+              </div>
+              <div class="result-item" style="border-top: 2px solid #0d9488; padding-top: 12px;">
+                <span style="font-weight: 700; font-size: 1.05rem;">Mantenimiento Diario (TDEE):</span>
+                <span id="res-tdee" class="result-value">2.369 kcal / día</span>
+              </div>
+              <div class="result-item">
+                <span>Déficit Saludable (Pérdida de Grasa -500 kcal):</span>
+                <span id="res-deficit" style="color: #0284c7; font-weight: 800; font-size: 1.15rem;">1.869 kcal / día</span>
+              </div>
+              <div class="result-item">
+                <span>Superávit Controlado (Ganancia Muscular +300 kcal):</span>
+                <span id="res-surplus" style="color: #f97316; font-weight: 800; font-size: 1.15rem;">2.669 kcal / día</span>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Bloque AdSense Dentro del Contenido -->
+        <div class="ad-slot-wrapper">
+          <span class="ad-label">Publicidad</span>
+          <div class="ad-box in-article-banner" data-ad-slot="inArticle"></div>
+        </div>
+
+        <!-- Sección de Artículos -->
+        <section>
+          <div style="margin-bottom: 24px;">
+            <h2 style="font-size: 1.75rem; color: #134e4a; font-weight: 800;">Guías de Nutrición y Salud</h2>
+            <p style="color: #64748b;">Información fundamentada con rigor científico y explicada para tu día a día.</p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card">
+              <span class="card-tag">Macronutrientes</span>
+              <h3><a href="articulos/guia-macronutrientes-proteinas-grasas-carbohidratos.html">Guía de Macronutrientes: Proteínas, Carbohidratos y Grasas Saludables</a></h3>
+              <p>Conoce los gramos exactos que necesita tu organismo por kilogramo de peso corporal y cómo distribuirlos en tus comidas.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 8 min</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="card-tag">Composición Corporal</span>
+              <h3><a href="articulos/como-calcular-deficit-calorico-saludable.html">Cómo Entrar en Déficit Calórico sin Perder Músculo ni Pasar Hambre</a></h3>
+              <p>Estrategias prácticas de volumen alimentario, fibra dietética y entrenamiento de fuerza para perder grasa sin efecto rebote.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 7 min</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="card-tag">Metabolismo</span>
+              <h3><a href="articulos/beneficios-ayuno-intermitente-ciencia.html">Ayuno Intermitente 16/8: Qué Dice la Evidencia Científica y Cómo Empezar</a></h3>
+              <p>Descubre la autofagia celular, la sensibilidad a la insulina y quiénes deben o no practicar protocolos de restricción horaria.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 9 min</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="card-tag">Suplementación</span>
+              <h3><a href="articulos/guia-suplementacion-creatina-proteina-omega3.html">Guía de Suplementos con Evidencia: Creatina, Proteína de Suero y Omega-3</a></h3>
+              <p>Descubre qué compuestos cuentan con respaldo clínico real de grado A y cuáles representan un gasto innecesario de dinero.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 10 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article class="card">
+              <span class="card-tag">Hidratación</span>
+              <h3><a href="articulos/hidratacion-rendimiento-fisico-salud.html">Importancia de la Hidratación en la Función Cognitiva y Rendimiento</a></h3>
+              <p>Por qué una deshidratación leve del 2% merma drásticamente la concentración mental y la fuerza física.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 6 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article class="card">
+              <span class="card-tag">Hipertrofia</span>
+              <h3><a href="articulos/nutricion-para-hipertrofia-muscular-evidencia.html">Nutrición para Ganar Masa Muscular: Superávit y Síntesis Proteica</a></h3>
+              <p>La ciencia detrás de la síntesis de proteína muscular (MPS), el umbral de leucina y la frecuencia de tomas óptima.</p>
+              <div class="card-meta">
+                <span>Por Carlos Benítez</span>
+                <span>Lectura: 9 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 7 -->
+            <article class="card">
+              <span class="card-tag">Consumo Inteligente</span>
+              <h3><a href="articulos/como-leer-etiquetas-nutricionales-ingredientes.html">Cómo Leer Etiquetas Nutricionales y Evitar Trampas en el Súper</a></h3>
+              <p>Descubre los más de 50 nombres del azúcar añadido y aprende a interpretar tablas por 100g frente a porciones engañosas.</p>
+              <div class="card-meta">
+                <span>Por Dra. Elena Santamaría</span>
+                <span>Lectura: 10 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 8 -->
+            <article class="card">
+              <span class="card-tag">Patrón Alimentario</span>
+              <h3><a href="articulos/dieta-mediterranea-por-que-es-la-mas-saludable-segun-estudios.html">La Dieta Mediterránea: Por Qué es la Más Saludable según la Ciencia</a></h3>
+              <p>El estudio PREDIMED, el aceite de oliva virgen extra, la microbiota intestinal y la longevidad cardiovascular.</p>
+              <div class="card-meta">
+                <span>Por Dra. Elena Santamaría</span>
+                <span>Lectura: 8 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 9 -->
+            <article class="card">
+              <span class="card-tag">Sueño y Hormonas</span>
+              <h3><a href="articulos/dormir-y-metabolismo-como-el-sueno-afecta-a-la-perdida-de-grasa.html">Sueño y Metabolismo: Cómo Dormir Poco Bloquea la Pérdida de Grasa</a></h3>
+              <p>La alteración del eje grelina-leptina, el cortisol elevado y la resistencia a la insulina inducida por mal descanso.</p>
+              <div class="card-meta">
+                <span>Por Carlos Benítez</span>
+                <span>Lectura: 7 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 10 -->
+            <article class="card">
+              <span class="card-tag">Cronobiología</span>
+              <h3><a href="articulos/higiene-del-sueno-ritmos-circadianos-salud.html">Higiene del Sueño y Ritmos Circadianos: Regulación Hormonal</a></h3>
+              <p>El reloj maestro del núcleo supraquiasmático, el impacto de la luz matutina y el protocolo para maximizar el sueño profundo NREM.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 9 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 11 -->
+            <article class="card">
+              <span class="card-tag">Entrenamiento de Fuerza</span>
+              <h3><a href="articulos/entrenamiento-fuerza-principiantes-hipertrofia-salud.html">Entrenamiento de Fuerza: Medicina Preventiva contra el Envejecimiento</a></h3>
+              <p>El músculo como órgano endocrino, prevención de sarcopenia y osteoporosis, y rutina fullbody de 3 días para principiantes.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 11 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 12 -->
+            <article class="card">
+              <span class="card-tag">Actividad Diaria</span>
+              <h3><a href="articulos/beneficios-caminar-10000-pasos-diarios-neat.html">El Poder del NEAT: Por Qué Caminar Transforma tu Metabolismo</a></h3>
+              <p>Descubre por qué la termogénesis no asociada al ejercicio quema más calorías que el gimnasio y su impacto en la glucosa posprandial.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 9 min</span>
+              </div>
+            </article>
+
+            <!-- Artículo 13 -->
+            <article class="card">
+              <span class="card-tag">Microbiota & Inmunidad</span>
+              <h3><a href="articulos/fibra-dietetica-microbiota-intestinal-inmunidad.html">Fibra Dietética y Microbiota: La Conexión Intestino-Cerebro</a></h3>
+              <p>Por qué el 70% de tus defensas viven en el colon, los ácidos grasos de cadena corta (butirato) y alimentos prebióticos estrella.</p>
+              <div class="card-meta">
+                <span>Redacción NutriVital</span>
+                <span>Lectura: 10 min</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Caja de Suscripción a la Newsletter -->
+          <div class="newsletter-box">
+            <h3>📬 Boletín de Nutrición Basada en Evidencia</h3>
+            <p>Recibe resúmenes semanales de estudios científicos, guías de alimentación y herramientas metabólicas sin publicidad invasiva.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Introduce tu correo electrónico..." required>
+              <button type="submit">Suscribirme Gratis</button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Barra Lateral -->
+      <aside class="sidebar">
+        
+        <div class="ad-slot-wrapper" style="margin-top: 0;">
+          <span class="ad-label">Publicidad</span>
+          <div class="ad-box sidebar-banner" data-ad-slot="sidebar"></div>
+        </div>
+
+        <div class="widget">
+          <h3 class="widget-title">Otras Calculadoras</h3>
+          <ul class="widget-list">
+            <li><a href="herramientas/index.html#calculadora-imc">⚖️ Calculadora de IMC y Peso Ideal</a></li>
+            <li><a href="herramientas/index.html#calculadora-agua">💧 Calculadora de Ingesta Diaria de Agua</a></li>
+            <li><a href="herramientas/index.html#calculadora-macros">🥑 Distribución de Macronutrientes</a></li>
+          </ul>
+        </div>
+
+        <div class="widget" style="background: #fffbeb; border-color: #fef3c7;">
+          <h3 class="widget-title" style="color: #92400e; border-color: #fde68a;">Aviso de Salud</h3>
+          <p style="font-size: 0.85rem; color: #92400e; line-height: 1.55;">
+            Los contenidos de este portal tienen fin meramente didáctico. No reemplazan el diagnóstico, asesoramiento o tratamiento médico personalizado. Consulta siempre a un profesional sanitario colegiado.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box footer-banner" data-ad-slot="footer"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🥗 NutriVital</h3>
+          <p>Portal divulgativo de nutrición humana, hábitos metabólicos saludables y bienestar integral.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Herramientas</h4>
+          <ul>
+            <li><a href="index.html#calculadora-tdee">Gasto Calórico TDEE</a></li>
+            <li><a href="herramientas/index.html#calculadora-imc">Índice de Masa Corporal</a></li>
+            <li><a href="herramientas/index.html#calculadora-agua">Consumo de Agua</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="politica-de-privacidad.html">Privacidad</a></li>
+            <li><a href="terminos-y-condiciones.html">Términos y Aviso Médico</a></li>
+            <li><a href="politica-de-cookies.html">Cookies</a></li>
+            <li><a href="sobre-nosotros.html">Quiénes Somos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p style="color: #ffffff; font-weight: 600;">info@nutrivital-salud.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NutriVital. Todos los derechos reservados.</p>
+        <p>Monetización responsable compatible con Google AdSense.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        Utilizamos cookies analíticas y publicitarias de Google AdSense para sostener este portal de acceso libre. Consulta nuestra <a href="politica-de-cookies.html" style="color: #5eead4;">Política de Cookies</a>.
+      </div>
+      <div class="cookie-actions">
+        <button id="cookie-accept" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">Aceptar</button>
+        <button id="cookie-decline" class="btn" style="padding: 8px 18px; font-size: 0.88rem; background: #334155; color: #fff;">Solo Técnicas</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
